@@ -13,15 +13,6 @@ const Home = () => {
     const [orderList,setOrderList] = useState([]);
     const [searchId,setId] = useState('');
     const [searchProduct,setProduct] = useState('');
-    // const [date,setDate] = useState('');
-    // const [skuid,setSkuid] = useState('');
-    // const [orderid,setOrderid] = useState('');
-    // const [productName,setProductName] = useState('');
-    // const [origin,setOrigin] = useState('');
-    // const [price,setPrice] = useState('');
-    // const [store1,setStore1] = useState(0);
-    // const [store2,setStore2] = useState(0);
-    // const [store3,setStore3] = useState(0);
     const [city,setCity] = useState("");
 
     const orderCollectionRef = collection(db,"StoreOrders");
@@ -279,6 +270,7 @@ const Home = () => {
                             <th>SKUID</th>
                             <th>Product Name</th>
                             <th>Origin</th>
+                            <th>Location</th>
                             <th>Store Order</th>
                             <th>Buyer Order</th>
                             <th>Order Status</th>
@@ -314,6 +306,7 @@ const Home = () => {
                                     <td>{val.skuid}</td>
                                     <td>{val.ProductName}</td>
                                     <td>{val.Origin}</td>
+                                    <td>{val.loc}</td>
                                     <td>{val.NewOrdQty}</td>
                                     <td>
                                         <input type="number" value={val.buyerOrder} required onChange={(event) => {
